@@ -47,6 +47,9 @@
     /* Get Category Node */
     JCategories::getInstance($extension)->get($catid);
     
+    /* Get Components params */
+    $params = JComponentHelper::getParams('com_something');
     
-    
+    /* Get Form Token */
+    $token = JSession::getFormToken();
     
