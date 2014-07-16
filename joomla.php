@@ -53,3 +53,5 @@
     /* Get Form Token */
     $token = JSession::getFormToken();
     
+    /* Send email */
+    JFactory::getMailer()->sendMail($mailfrom, $fromname, $emailAddress, $subject, $message, true);
