@@ -9,6 +9,9 @@
     $layout = new JLayoutFile('my_layout', $basePath = JPATH_ROOT .'/components/com_something/layouts');
     $html = $layout->render($data);
     
+    /* Using Layout Helper */
+    echo JLayoutHelper::render('joomla.content.info_block.parent_category', $displayData);
+    
     /* Plugin path layout file */
     $path = JPluginHelper::getLayoutPath('content', 'gchcontent', 'contact');
     // Render the page content
