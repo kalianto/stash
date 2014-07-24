@@ -58,3 +58,24 @@
     
     /* Send email */
     JFactory::getMailer()->sendMail($mailfrom, $fromname, $emailAddress, $subject, $message, true);
+    
+    /* Error Logging */
+    jimport('joomla.log.log');
+    JLog::addLogger( array( 'text_file' => 'jlog.php' ) );
+    JLog::add("This is my text!");
+
+    /* Error Message and Exception handling */
+    $application = JFactory::getApplication();
+    $application->enqueueMessage(JText::_('SOME_ERROR_OCCURRED'), $type = '');
+    
+    //alternatively
+    JFactory::getApplication()->enqueueMessage(JText::_('SOME_ERROR_OCCURRED'), $type = '');
+
+    $type = array('warning', 'notice', 'error', 'message');
+
+
+
+
+    
+    
+    
