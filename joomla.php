@@ -63,6 +63,9 @@
     jimport('joomla.log.log');
     JLog::addLogger( array( 'text_file' => 'jlog.php' ) );
     JLog::add("This is my text!");
+    
+    //display the error message to user
+    JLog::add("This is my text!", JLog::WARNING, 'jerror');
 
     /* Error Message and Exception handling */
     $application = JFactory::getApplication();
