@@ -75,6 +75,19 @@
     JFactory::getApplication()->enqueueMessage(JText::_('SOME_ERROR_OCCURRED'), $type = '');
 
     $type = array('warning', 'notice', 'error', 'message');
+    
+    
+    /* Stylesheet inclusion */
+    JHtml::stylesheet('com_mycomponent/default.css', array(), true);
+    
+    //you will get one of the following results
+    /*
+        - /templates/[template]/css/com_mycomponent/default.css
+        - /media/com_mycomponent/css/default.css
+        - /media/system/css/com_mycomponent/default.css
+        - /templates/[template]/css/system/default.css
+        - /media/system/css/default.css
+    */
 
 
 
