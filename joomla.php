@@ -89,7 +89,20 @@
         - /media/system/css/default.css
     */
 
-
+    /* JModelLegacry */
+    JModelLegacy::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_categories/models', 'CategoriesModel');
+    $model = JModelLegacy::getInstance('Categories', 'CategoriesModel', array('ignore_request' => true));
+    
+    /* JTable */
+    JTable::addIncludePath(JPATH_ADMINISTRATOR . '/components/com_categories/tables', 'CategoriesTable');
+    $cat =& JTable::getInstance('Category', 'CategoriesTable');
+    
+    /* load a record into the table object */
+    $cat->load($catid);
+    
+    /* create or update a record using the table object */
+    $cat->store();
+    
 
 
     
