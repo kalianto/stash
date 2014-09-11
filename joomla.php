@@ -47,8 +47,11 @@
     /* Content Router */
     JRoute::_(ContentHelperRouter::getArticleRoute($slug, $catslug);
     
-    /* Get Category Node */
-    JCategories::getInstance($extension)->get($catid);
+    /* Get Category Node, for Content category */
+    JCategories::getInstance('Content')->get($catid);
+
+    /* Get Category Node, for Weblinks category */
+    JCategories::getInstance('Weblinks')->get($catid);
     
     /* Get Components params */
     $params = JComponentHelper::getParams('com_something');
