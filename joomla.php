@@ -106,7 +106,38 @@
     /* create or update a record using the table object */
     $cat->store();
     
-
+    /* Select options */
+    $data = array(
+        array(
+            'value' => 'redapple',
+            'text' => 'Red apple',
+            'attr' => array('data-price'=>'5'),
+        ),
+        array(
+            'value' => 'greenapple',
+            'text' => 'Green apple',
+            'attr' => array('data-price'=>'3'),
+        ),
+    );
+    
+    $options = array(
+        'id' => 'applesfield', // HTML id for select field
+        'list.attr' => array( // additional HTML attributes for select field
+            'class'=>'field-apples',
+        ),
+        'list.translate'=>false, // true to translate
+        'option.key'=>'value', // key name for value in data array
+        'option.text'=>'text', // key name for text in data array
+        'option.attr'=>'attr', // key name for attr in data array
+        'list.select'=>'greenapple', // value of the SELECTED field
+    );
+    
+    $result = JHtmlSelect::genericlist($data,'apples',$options);
+    //this will result in:
+    <select id="applesfield" name="apples" class="field-apples">
+        <option value="redapple" data-price="5">Red apple</option>
+        <option value="greenapple" data-price="3" selected="selected">Green apple</option>
+    </select>
 
     
     
