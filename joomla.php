@@ -138,7 +138,15 @@
         <option value="redapple" data-price="5">Red apple</option>
         <option value="greenapple" data-price="3" selected="selected">Green apple</option>
     </select>
-
+    
+    // Verify that the alias is unique
+	// This is how joomla check for duplicate items in weblinks
+	$table = JTable::getInstance('Post', 'GchNewsTable');
+	if ($table->load(array('alias' => $this->alias, 'catid' => $this->catid)) && ($table->id != $this->id || $this->id == 0))
+	{
+        $this->setError(JText::_('COM_GCHNEWS_ERROR_UNIQUE_ALIAS'));
+		return false;
+	}
     
     
     
