@@ -147,6 +147,12 @@
         $this->setError(JText::_('COM_GCHNEWS_ERROR_UNIQUE_ALIAS'));
 		return false;
 	}
-    
+	
+	//Joomla way to get JSON object from an array
+    	$opt['backdrop'] = isset($params['backdrop']) ? (boolean) $params['backdrop'] : true;
+	$opt['keyboard'] = isset($params['keyboard']) ? (boolean) $params['keyboard'] : true;
+	$opt['show']     = isset($params['show']) ? (boolean) $params['show'] : true;
+	$opt['remote']   = isset($params['remote']) ?  $params['remote'] : '';
+	$options = JHtml::getJSObject($opt);
     
     
