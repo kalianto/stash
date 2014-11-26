@@ -12,6 +12,9 @@
     /* Using Layout Helper */
     echo JLayoutHelper::render('joomla.content.info_block.parent_category', $displayData);
     
+    //or 
+    echo JLayoutHelper::render('joomla.content.info_block.parent_category', $displayData,  $basePath = JPATH_ROOT .'/components/com_something/layouts');
+    
     /* Plugin path layout file */
     $path = JPluginHelper::getLayoutPath('content', 'gchcontent', 'contact');
     // Render the page content
