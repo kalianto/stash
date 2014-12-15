@@ -158,4 +158,8 @@
 	$opt['remote']   = isset($params['remote']) ?  $params['remote'] : '';
 	$options = JHtml::getJSObject($opt);
     
+    // Build the active state filter options.
+	$options = array();
+	$options[] = JHtml::_('select.option', '1', 'COM_TEXT_PUBLISHED');
+	$options[] = JHtml::_('select.option', '0', 'COM_TEXT_UNPUBLISHED');
     
