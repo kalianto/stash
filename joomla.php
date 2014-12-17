@@ -143,23 +143,25 @@
     </select>
     
     // Verify that the alias is unique
-	// This is how joomla check for duplicate items in weblinks
-	$table = JTable::getInstance('Post', 'GchNewsTable');
-	if ($table->load(array('alias' => $this->alias, 'catid' => $this->catid)) && ($table->id != $this->id || $this->id == 0))
-	{
+    // This is how joomla check for duplicate items in weblinks
+    $table = JTable::getInstance('Post', 'GchNewsTable');
+    if ($table->load(array('alias' => $this->alias, 'catid' => $this->catid)) && ($table->id != $this->id || $this->id == 0))
+    {
         $this->setError(JText::_('COM_GCHNEWS_ERROR_UNIQUE_ALIAS'));
-		return false;
-	}
-	
-	//Joomla way to get JSON object from an array
-    	$opt['backdrop'] = isset($params['backdrop']) ? (boolean) $params['backdrop'] : true;
-	$opt['keyboard'] = isset($params['keyboard']) ? (boolean) $params['keyboard'] : true;
-	$opt['show']     = isset($params['show']) ? (boolean) $params['show'] : true;
-	$opt['remote']   = isset($params['remote']) ?  $params['remote'] : '';
-	$options = JHtml::getJSObject($opt);
+    	return false;
+    }
+    
+    //Joomla way to get JSON object from an array
+    $opt['backdrop'] = isset($params['backdrop']) ? (boolean) $params['backdrop'] : true;
+    $opt['keyboard'] = isset($params['keyboard']) ? (boolean) $params['keyboard'] : true;
+    $opt['show']     = isset($params['show']) ? (boolean) $params['show'] : true;
+    $opt['remote']   = isset($params['remote']) ?  $params['remote'] : '';
+    $options = JHtml::getJSObject($opt);
     
     // Build the active state filter options.
 	$options = array();
 	$options[] = JHtml::_('select.option', '1', 'COM_TEXT_PUBLISHED');
 	$options[] = JHtml::_('select.option', '0', 'COM_TEXT_UNPUBLISHED');
     
+    //Load or create a form instance
+    $this->form = JForm::getInstance('com_something.element', 'filename-of-the-xml', array('control' => 'jform', 'load_data' => false));
