@@ -169,4 +169,5 @@
 	//modal box in the admin area
 	JHTML::_('behavior.modal');
 	
-	//To open a modal window, use a link formatted like <a href="your_url" class="modal">Your text or image</a>
+	//To open a modal window, use a link formatted like 
+	//<a href="your_url" class="modal" rel="{handler:'iframe', size:{x:500, y:400}}">Your text or image</a>
