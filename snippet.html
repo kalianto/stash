@@ -1,0 +1,46 @@
+<style type="text/css">
+input[type=radio].chk-box {
+	position: absolute; 
+	overflow: hidden; 
+	clip: rect(0 0 0 0); 
+	height:1px; 
+	width:1px; 
+	margin:-1px; 
+	padding:0;
+	border:0;
+}
+
+label.lbl-chkbox {
+	padding: 15px 15px 18px 10px;
+	text-indent: 50px;
+	vertical-align: middle;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+label.lbl-chkbox-1 {
+	background: transparent url('../images/sad14.png') no-repeat 15px 10px;
+}
+label.lbl-chkbox-2 {
+	background: transparent url('../images/emoticon32.png') no-repeat 15px 10px;
+}
+label.lbl-chkbox-3 {
+	background: transparent url('../images/smiling9.png') no-repeat 15px 10px;
+}
+
+input[type=radio].chk-box:checked + label.lbl-chkbox {
+	background-color: #F2F2F2;
+	color:#000;
+}
+</style>
+
+
+<input type="radio" name="response" class="chk-box" id="response1" />
+<label class="lbl-chkbox-1 lbl-chkbox" for="response1">With SOME difficulty</label>
+<br/>
+<input type="radio" name="response" class="chk-box" id="response2" />
+<label class="lbl-chkbox-2 lbl-chkbox" for="response2">With LITTLE difficulty</label>
+<br/>
+<input type="radio" name="response" class="chk-box" id="response3" />
+<label class="lbl-chkbox-3 lbl-chkbox" for="response3">Without ANY difficulty</label>
+
