@@ -166,8 +166,8 @@
     //Load or create a form instance
     $this->form = JForm::getInstance('com_something.element', 'filename-of-the-xml', array('control' => 'jform', 'load_data' => false));
 
-	//modal box in the admin area
-	JHTML::_('behavior.modal');
-	
-	//To open a modal window, use a link formatted like 
-	//<a href="your_url" class="modal" rel="{handler:'iframe', size:{x:500, y:400}}">Your text or image</a>
+    //modal box in the admin area
+    JHTML::_('behavior.modal');
+    
+    //To open a modal window, use a link formatted like 
+    //<a href="your_url" class="modal" rel="{handler:'iframe', size:{x:500, y:400}}">Your text or image</a>
