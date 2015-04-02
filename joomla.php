@@ -171,3 +171,6 @@
     
     //To open a modal window, use a link formatted like 
     //<a href="your_url" class="modal" rel="{handler:'iframe', size:{x:500, y:400}}">Your text or image</a>
+    
+    //To update chosen select with a selected value, use trigger "liszt:updated"
+    // jQuery('#jform_dates__venue_id').val(venue).trigger("liszt:updated");
