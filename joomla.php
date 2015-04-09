@@ -166,6 +166,9 @@
     //Load or create a form instance
     $this->form = JForm::getInstance('com_something.element', 'filename-of-the-xml', array('control' => 'jform', 'load_data' => false));
 
+	//JSON Response
+	echo new JResponseJson($results, null, false, $input->get('ignoreMessages', true, 'bool'));
+
     //modal box in the admin area
     JHTML::_('behavior.modal');
     
