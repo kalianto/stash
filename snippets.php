@@ -47,4 +47,48 @@
 		//return array('red' => $r, 'green' => $g, 'blue' => $b);
 	}
     
+function randomly() {
+	$powerball = array(1,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+	$first = array(21,23,24,25,27,28,29,33,34,36,37,39);
+	$main = array_merge($powerball, $first);
+
+	$mainNumber = array();
+	$m_count = count($mainNumber);
+
+	$min = 0; 
+	$max = count($main)-1;
+	$max2 = count($powerball)-1;
+
+	$x = 0; $c = 0;
+	for($x = 0; $x < 16; $x++) {
+		$mainNumber[$x] = array();
+		$m_count = count($mainNumber[$x]);
+		while($m_count < 7) {
+			//get random number
+			mt_srand();
+			if ($m_count < 6) {
+				$key = mt_rand($min, $max);
+				if (!isset($main[$key])) continue;
+				$mainNumber[$x][] = $main[$key];
+			} else {
+				$key = mt_rand($min, $max2);
+				if (!isset($powerball[$key])) continue;
+				$mainNumber[$x][] = $powerball[$key];
+			}
+			$mainNumber[$x] = array_unique($mainNumber[$x]);
+			$m_count = count($mainNumber[$x]);
+		}
+
+		echo "Game " . ($x+1) . ": " . implode(", ", $mainNumber[$x]) . PHP_EOL;
+
+		if ($x == 15) {
+			echo "==================================" . PHP_EOL;
+			$x = -1; 
+			$c++;
+		}
+
+		if ($c >= 5) break;
+
+	}
+}
     
